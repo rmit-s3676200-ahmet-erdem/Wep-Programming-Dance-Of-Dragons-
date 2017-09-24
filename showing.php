@@ -148,7 +148,7 @@
               </div>
               <div class="seven columns">
                 <label>Price</label>
-                <p><span class="price" id="pStdAd">0.00</span></p>
+                <p><span class="price" id="pStdAd">$ 0.00</span></p>
               </div>
             </div>
             <div class="row">
@@ -170,7 +170,7 @@
               </div>
               <div class="seven columns">
                 <label>Price</label>
-                <p><span class="price" id="pStdCo">0.00</span></p>
+                <p><span class="price" id="pStdCo">$ 0.00</span></p>
               </div>
             </div>
             <div class="row">
@@ -192,7 +192,7 @@
               </div>
               <div class="seven columns">
                 <label>Price</label>
-                <p><span class="price" id="pStdCh">0.00</span></p>
+                <p><span class="price" id="pStdCh">$ 0.00</span></p>
               </div>
             </div>
             </fieldset>
@@ -216,7 +216,7 @@
                 </div>
                 <div class="seven columns">
                   <label>Price</label>
-                  <p><span class="price" id="pPreAd">0.00</span></p>
+                  <p><span class="price" id="pPreAd">$ 0.00</span></p>
                 </div>
               </div>
               <div class="row">
@@ -238,7 +238,7 @@
                 </div>
                 <div class="seven columns">
                   <label>Price</label>
-                  <p><span class="price" id="pPreCh">0.00</span></p>
+                  <p><span class="price" id="pPreCh">$ 0.00</span></p>
                 </div>
               </div>
             </fieldset>
@@ -262,7 +262,7 @@
                 </div>
                 <div class="seven columns">
                   <label>Price</label>
-                  <p><span class="price" id="pBeanAd">0.00</span></p>label
+                  <p><span class="price" id="pBeanAd">$ 0.00</span></p>
                 </div>
               </div>
               <div class="row">
@@ -284,7 +284,7 @@
                 </div>
                 <div class="seven columns">
                   <label>Price</label>
-                  <p><span class="price" id="pBeanFa">0.00</span></p>
+                  <p><span class="price" id="pBeanFa">$ 0.00</span></p>
                 </div>
               </div>
               <div class="row">
@@ -306,7 +306,7 @@
                 </div>
                 <div class="seven columns">
                   <label>Price</label>
-                  <p><span class="price" id="pBeanCh">0.00</span></p>
+                  <p><span class="price" id="pBeanCh">$ 0.00</span></p>
                 </div>
               </div>
             </fieldset>

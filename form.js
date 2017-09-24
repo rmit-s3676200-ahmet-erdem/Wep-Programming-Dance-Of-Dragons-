@@ -16,7 +16,7 @@ var monBeCh = 0.0;
 function callTotal(){
   var total = +(monStdAd) + +(monStdCo) + +(monStdCh) + +(monFcAd) + +(monFcCh) + +(monBeAd) + +(monBeFa) + +(monBeCh);
   var p = getId('pTotal');
-  p.innerHTML = total.toFixed(2);
+  p.innerHTML = "$ " + total.toFixed(2);
 }
 function getId(sP)
 {
@@ -169,7 +169,7 @@ function stdFuncAd(myId){
   monStdAd = opt;
   callTotal();
   var p = getId('pStdAd');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function stdFuncCo(myId){
   monStdCo = 0.0;
@@ -177,7 +177,7 @@ function stdFuncCo(myId){
   monStdCo = opt;
   callTotal();
   var p = getId('pStdCo');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function stdFuncCh(myId){
   monStdCh = 0.0;
@@ -185,7 +185,7 @@ function stdFuncCh(myId){
   monStdCh = opt;
   callTotal();
   var p = getId('pStdCh');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function fcFuncAd(myId){
   monFcAd = 0.0;
@@ -193,7 +193,7 @@ function fcFuncAd(myId){
   monFcAd = opt;
   callTotal();
   var p = getId('pPreAd');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function fcFuncCh(myId){
   monFcCh = 0.0;
@@ -201,7 +201,7 @@ function fcFuncCh(myId){
   monFcCh = opt;
   callTotal();
   var p = getId('pPreCh');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function beanFuncAd(myId){
   monBeAd = 0.0;
@@ -209,7 +209,7 @@ function beanFuncAd(myId){
   monBeAd = opt;
   callTotal();
   var p = getId('pBeanAd');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function beanFuncFa(myId){
   monBeFa = 0.0;
@@ -217,7 +217,7 @@ function beanFuncFa(myId){
   monBeFa = opt;
   callTotal();
   var p = getId('pBeanFa');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function beanFuncCh(myId){
   monBeCh = 0.0;
@@ -225,7 +225,7 @@ function beanFuncCh(myId){
   monBeCh =opt;
   callTotal();
   var p = getId('pBeanCh');
-  p.innerHTML = opt;
+  p.innerHTML = "$ " + opt;
 }
 function sessionFunction(){
   stdFuncAd('stdFSeat');
