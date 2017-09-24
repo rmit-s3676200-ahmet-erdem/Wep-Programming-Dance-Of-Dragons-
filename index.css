@@ -1,0 +1,204 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+  line-height: 1.61803398875em;
+	padding: 0;
+	margin: 0;
+	font-size: 10vh;
+  background: rgba(0,0,11,1);
+}
+
+.ico{
+  height: 5vh;
+  width: 5vh;
+  vertical-align: middle;
+}
+
+main {
+	min-height: 400px;
+    display: block;
+    flex-flow: row;
+    font-size: 25px;
+    color: white;  	
+}
+
+#silverado{
+	vertical-align: middle;
+  margin-left: 0;
+	padding-left: 1vw;
+  padding-top:  1.5vh;
+  padding-bottom: 1.5vh;
+  padding-right: 1vw;
+}
+
+header{
+	background: black;
+	display: inline-block;
+	font-family: 'Monoton', cursive;
+	padding-left: 3vw;
+  padding-top: 1.5vh;
+  vertical-align: middle;
+	justify-content: left;
+	font-size: 30px;
+	color: white;
+	width: auto; 
+}
+
+#banner{
+   background: url('https://image.ibb.co/di781k/bigstock_Happy_couple_sitting_in_movie_60869540_2.jpg') 0 0 no-repeat;
+   background-size: 100%;
+   background-position: center;
+   height: 420px;
+   width: 100%;
+   margin-bottom: 1em;
+   display: table;
+}
+
+article{
+	background: rgba(170,0,0, 0.3);
+  	min-width: 70%;
+  	padding: 0;
+  	margin: 0;
+  	display: block;
+    text-align: center;
+}
+
+footer {
+	font-size: small;
+    display: block;
+    color: white;
+    padding:2vw;
+}
+
+h1	{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-weight: 900;
+	font-size: 2.5em;
+	font-stretch: 2px;
+}
+
+.title{
+  font-weight: 700;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+h3{
+   font-size: 0.5em;
+}
+
+nav ul {
+	margin: 0;
+  padding: 0;
+	color: white;
+  list-style-type: none;
+  box-sizing: border-box; 
+  overflow: hidden;
+  background-color: rgb(119, 119, 119);
+}
+
+nav li {
+    float: right;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+nav li a {
+	font-family:'Roboto', sans-serif;
+	font-size: 3vh;
+	font-weight: 300px;
+  display: inline-block;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  padding-right: 3vw;
+  padding-bottom: 0;
+  text-decoration: none;
+}
+
+nav li a:hover {
+    background-color:rgb(29, 39, 49);
+}
+
+button.button-primary, .button.button-primary {
+  color: white;
+  background-color: rgba(170,0,0, 0.1);
+}
+
+button.button-primary,.button.button-primary:hover{
+  background-color: rgba(170,0,0, 0.3);
+  -webkit-box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+-moz-box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+}
+
+.movie{
+  width: 100%;
+  height: 350px;
+}
+
+#carousel{
+  text-align: center;
+  margin: 1em;
+}
+
+.dimension, form{
+    margin-bottom: 3.125em;
+    padding: 1em;
+    text-align: center;
+    background-color: rgba(227, 233, 242, 0.5);
+    border-radius: 5px;
+    box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+    -webkit-box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+    -moz-box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
+}
+
+li{
+  list-style: none;
+}
+
+
+#showing{
+	box-sizing:border-box;
+  max-width: 1800px;
+  grid-auto-flow: column;
+}
+
+@media (max-width: 750px) {
+    #banner {
+      height: 400px;
+    }
+    #showing{
+      max-width: 400px;
+    }
+
+    div{
+      min-width: 100%;
+    }
+}
+
+form{
+	color: white;
+  text-align: left;
+  margin-top: 2em;
+  font-size: 3.5vh;
+
+}
+
+fieldset{
+  border: 1px;
+  border-radius: 5px;
+}
+
+.timechart{
+  font-size: 3.5vh;
+  box-shadow: none;
+}
+
+.timechart> li{
+  font-size:3vh;
+}
+/*CEM'S EDITION*/
+.total{
+  text-align: right;
+}
