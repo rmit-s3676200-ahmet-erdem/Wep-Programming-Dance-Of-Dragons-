@@ -125,7 +125,7 @@ function mvFunc(){
           selectSession.removeChild(selectSession.firstChild);
       }
       if(opt.value == "CH"){
-        selectSession.innerHTML="<option selected disabled >Please select movie</option>"
+        selectSession.innerHTML="<option selected disabled >Select Session</option>"
         selectSession.innerHTML+="<option value=\"MON-13\">Monday 1pm</option>"
         selectSession.innerHTML+="<option value=\"TUE-13\">Tuesday 1pm</option>"
         selectSession.innerHTML+="<option value=\"WED-18\">Wednesday 6pm</option>"
@@ -135,14 +135,14 @@ function mvFunc(){
         selectSession.innerHTML+="<option value=\"SUN-12\">Sunday 12pm</option>"
       }
       else if(opt.value == "AF"){
-        selectSession.innerHTML="<option selected disabled >Please select movie</option>"
+        selectSession.innerHTML="<option selected disabled >Select Session</option>"
         selectSession.innerHTML+="<option value=\"MON-18\">Monday 6pm</option>"
         selectSession.innerHTML+="<option value=\"TUE-18\">Tuesday 6pm</option>"
         selectSession.innerHTML+="<option value=\"SAT-15\">Saturday 3pm</option>"
         selectSession.innerHTML+="<option value=\"SUN-15\">Sunday 3pm</option>"
       }
       else if(opt.value == "RC"){
-        selectSession.innerHTML="<option selected disabled >Please select movie</option>"
+        selectSession.innerHTML="<option selected disabled >Select Session</option>"
         selectSession.innerHTML+="<option value=\"MON-21\">Monday 9pm</option>"
         selectSession.innerHTML+="<option value=\"TUE-21\">Tuesday 9pm</option>"
         selectSession.innerHTML+="<option value=\"WED-13\">Wednesday 1pm</option>"
@@ -152,7 +152,7 @@ function mvFunc(){
         selectSession.innerHTML+="<option value=\"SUN-18\">Sunday 6pm</option>"
       }
       else if(opt.value == "AC"){
-        selectSession.innerHTML="<option selected disabled >Please select movie</option>"
+        selectSession.innerHTML="<option selected disabled >Select Session</option>"
         selectSession.innerHTML+="<option value=\"WED-21\">Wednesday 9pm</option>"
         selectSession.innerHTML+="<option value=\"THU-21\">Thursday 9pm</option>"
         selectSession.innerHTML+="<option value=\"FRI-21\">Friday 9pm</option>"
