@@ -112,7 +112,7 @@
           <div class="row">
             <div class="five columns">
                 <label>Select Movie:</label>
-                <select onchange='mvFunc()' class="dropdown u-full-width" form="tickets" name="booking[movie]" id="movieTitle" required>
+                <select onchange="mvFunc(); sessionFunction();" class="dropdown u-full-width" form="tickets" name="booking[movie]" id="movieTitle" required>
                   <option selected disabled>Select Movie</option>
                   <option value="CH" id="CH">Despicable Me 3</option>
                   <option value="AC" id="AC">Atomic Blonde</option>
@@ -123,7 +123,7 @@
             <div class="five columns">
               <label>Select Session:</label>
                 <select onchange='sessionFunction()'class="dropdown u-full-width" form="tickets" name="booking[session]" id="session" required>
-                  <option selected disabled>Select Session</option>
+                  <option selected disabled >Select Session</option>
                 </select>
             </div>
           </div>

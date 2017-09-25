@@ -164,12 +164,22 @@ function mvFunc(){
   }
 }
 function stdFuncAd(myId){
-  monStdAd = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monStdAd = opt;
-  callTotal();
-  var p = getId('pStdAd');
-  p.innerHTML = "$ " + opt;
+  alert(getIndexOfSelectedOption(getId('session')) == 0)
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId('stdFSeat').selectedIndex = 0;
+    monStdAd = 0.0;
+    callTotal();
+    var p = getId('pStdAd');
+    p.innerHTML = "$ " + monStdAd.toFixed(2);
+  }
+  else{
+    monStdAd = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monStdAd = opt;
+    callTotal();
+    var p = getId('pStdAd');
+    p.innerHTML = "$ " + opt;
+  }
 }
 function stdFuncCo(myId){
   monStdCo = 0.0;
