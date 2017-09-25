@@ -164,9 +164,8 @@ function mvFunc(){
   }
 }
 function stdFuncAd(myId){
-  alert(getIndexOfSelectedOption(getId('session')) == 0)
   if(getIndexOfSelectedOption(getId('session')) == 0){
-    getId('stdFSeat').selectedIndex = 0;
+    getId(myId).selectedIndex = 0;
     monStdAd = 0.0;
     callTotal();
     var p = getId('pStdAd');
@@ -182,60 +181,165 @@ function stdFuncAd(myId){
   }
 }
 function stdFuncCo(myId){
-  monStdCo = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monStdCo = opt;
-  callTotal();
-  var p = getId('pStdCo');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monStdCo = 0.0;
+    callTotal();
+    var p = getId('pStdCo');
+    p.innerHTML = "$ " + monStdCo.toFixed(2);
+  }
+  else{
+    monStdCo = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monStdCo = opt;
+    callTotal();
+    var p = getId('pStdCo');
+    p.innerHTML = "$ " + opt;
+  }
+  // monStdCo = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monStdCo = opt;
+  // callTotal();
+  // var p = getId('pStdCo');
+  // p.innerHTML = "$ " + opt;
 }
 function stdFuncCh(myId){
-  monStdCh = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monStdCh = opt;
-  callTotal();
-  var p = getId('pStdCh');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monStdCh = 0.0;
+    callTotal();
+    var p = getId('pStdCh');
+    p.innerHTML = "$ " + monStdCh.toFixed(2);
+  }
+  else{
+    monStdCh = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monStdCh = opt;
+    callTotal();
+    var p = getId('pStdCh');
+    p.innerHTML = "$ " + opt;
+  }
+  // monStdCh = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monStdCh = opt;
+  // callTotal();
+  // var p = getId('pStdCh');
+  // p.innerHTML = "$ " + opt;
 }
 function fcFuncAd(myId){
-  monFcAd = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monFcAd = opt;
-  callTotal();
-  var p = getId('pPreAd');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monFcAd = 0.0;
+    callTotal();
+    var p = getId('pPreAd');
+    p.innerHTML = "$ " + monFcAd.toFixed(2);
+  }
+  else{
+    monFcAd = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monFcAd = opt;
+    callTotal();
+    var p = getId('pPreAd');
+    p.innerHTML = "$ " + opt;
+  }
+  // monFcAd = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monFcAd = opt;
+  // callTotal();
+  // var p = getId('pPreAd');
+  // p.innerHTML = "$ " + opt;
 }
 function fcFuncCh(myId){
-  monFcCh = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monFcCh = opt;
-  callTotal();
-  var p = getId('pPreCh');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monFcCh = 0.0;
+    callTotal();
+    var p = getId('pPreCh');
+    p.innerHTML = "$ " + monFcCh.toFixed(2);
+  }
+  else{
+    monFcCh = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monFcCh = opt;
+    callTotal();
+    var p = getId('pPreCh');
+    p.innerHTML = "$ " + opt;
+  }
+  // monFcCh = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monFcCh = opt;
+  // callTotal();
+  // var p = getId('pPreCh');
+  // p.innerHTML = "$ " + opt;
 }
 function beanFuncAd(myId){
-  monBeAd = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monBeAd = opt;
-  callTotal();
-  var p = getId('pBeanAd');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monBeAd = 0.0;
+    callTotal();
+    var p = getId('pBeanAd');
+    p.innerHTML = "$ " + monBeAd.toFixed(2);
+  }
+  else{
+    monBeAd = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monBeAd = opt;
+    callTotal();
+    var p = getId('pBeanAd');
+    p.innerHTML = "$ " + opt;
+  }
+  // monBeAd = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monBeAd = opt;
+  // callTotal();
+  // var p = getId('pBeanAd');
+  // p.innerHTML = "$ " + opt;
 }
 function beanFuncFa(myId){
-  monBeFa = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monBeFa = opt;
-  callTotal();
-  var p = getId('pBeanFa');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monBeFa = 0.0;
+    callTotal();
+    var p = getId('pBeanFa');
+    p.innerHTML = "$ " + monBeFa.toFixed(2);
+  }
+  else{
+    monBeFa = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monBeFa = opt;
+    callTotal();
+    var p = getId('pBeanFa');
+    p.innerHTML = "$ " + opt;
+  }
+  // monBeFa = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monBeFa = opt;
+  // callTotal();
+  // var p = getId('pBeanFa');
+  // p.innerHTML = "$ " + opt;
 }
 function beanFuncCh(myId){
-  monBeCh = 0.0;
-  var opt = selectedPriceCalculation(getId(myId));
-  monBeCh =opt;
-  callTotal();
-  var p = getId('pBeanCh');
-  p.innerHTML = "$ " + opt;
+  if(getIndexOfSelectedOption(getId('session')) == 0){
+    getId(myId).selectedIndex = 0;
+    monBeCh = 0.0;
+    callTotal();
+    var p = getId('pBeanCh');
+    p.innerHTML = "$ " + monBeCh.toFixed(2);
+  }
+  else{
+    monBeCh = 0.0;
+    var opt = selectedPriceCalculation(getId(myId));
+    monBeCh = opt;
+    callTotal();
+    var p = getId('pBeanCh');
+    p.innerHTML = "$ " + opt;
+  }
+  // monBeCh = 0.0;
+  // var opt = selectedPriceCalculation(getId(myId));
+  // monBeCh =opt;
+  // callTotal();
+  // var p = getId('pBeanCh');
+  // p.innerHTML = "$ " + opt;
 }
 function sessionFunction(){
   stdFuncAd('stdFSeat');
