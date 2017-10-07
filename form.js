@@ -33,6 +33,8 @@ function getSelectedOption(sel) {
     }
     return opt;
 }
+
+
 function getIndexOfSelectedOption(sel) {
     for ( var i = 1, len = sel.options.length; i < len; i++ ) {
         if ( sel.options[i].selected === true ) {
@@ -354,7 +356,7 @@ function sessionFunction(){
 }
 function clearForm()
 {
-  alert("about to clear errors");
+  //alert("about to clear errors");
   // var allPrice = document.getElementsByClassName('price');
   // for (var i = 0; i < allPrice.length; i++) {
   // allPrice[i].innerHTML = "0.00";
@@ -375,8 +377,22 @@ function clearForm()
 }
 
 
+
+function ticketCheck(){
+  //alert("hello");
+  var ticketStdF = getId('stdFSeat');
+  if(ticketStdF.options[0].selected === true){
+    getId('ticketError').innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
+    return false;
+  }
+  // ticketStdF.options[0].value = "0";
+  return true;
+}
 function formValidate(){
-  clearForm();
+    //alert("hi");
+    if(!ticketCheck()){
+      return false;
+    }
   return true;
   // var countForm=0;
   // if(!nameCheck()){

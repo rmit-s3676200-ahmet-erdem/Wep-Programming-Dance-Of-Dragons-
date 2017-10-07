@@ -16,10 +16,10 @@ body{
 
 main {
 	min-height: 400px;
-    display: block;
-    flex-flow: row;
-    font-size: 25px;
-    color: white;  	
+  display: block;
+  flex-flow: row;
+  font-size: 25px;
+  color: white;  	
 }
 
 #silverado{
@@ -56,11 +56,11 @@ header{
 
 article{
 	background: rgba(170,0,0, 0.3);
-  	min-width: 70%;
-  	padding: 0;
-  	margin: 0;
-  	display: block;
-    text-align: center;
+  min-width: 70%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  text-align: center;
 }
 
 footer {
@@ -143,6 +143,7 @@ box-shadow: 5px 14px 30px 0px rgba(0,0,0,0.83);
 }
 
 .dimension, form{
+    box-sizing: border-box;
     margin-bottom: 3.125em;
     padding: 1em;
     text-align: center;
@@ -198,7 +199,14 @@ fieldset{
 .timechart> li{
   font-size:3vh;
 }
-/*CEM'S EDITION*/
+/*CEM'S LAST EDITION*/
 .total{
   text-align: right;
+}
+
+#discount{
+  text-align: left;
+}
+#ticketError{
+  color:rgb(170,0,0);
 }
