@@ -381,18 +381,31 @@ function clearForm()
 function ticketCheck(){
   //alert("hello");
   var ticketStdF = getId('stdFSeat');
-  if(ticketStdF.options[0].selected === true){
-    getId('ticketError').innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
+  var ticketStdCo = getId('stdCoSeat');
+  var ticketStdCh = getId('stdChSeat');
+  var ticketPreAd = getId('preAd');
+  var ticketPreCh = getId('preCh');
+  var ticketBeanAd = getId('beanAd');
+  var ticketBeanFa = getId('beanFa');
+  var ticketBeanCh = getId('beanCh');
+  //alert("TOP Hello");
+  if(ticketStdF.options[0].selected === true && ticketStdCo.options[0].selected === true && ticketStdCh.options[0].selected === true && ticketPreAd.options[0].selected === true && ticketPreCh.options[0].selected === true && ticketBeanAd.options[0].selected === true && ticketBeanFa.options[0].selected === true && ticketBeanCh.options[0].selected === true){
+    //alert("hello");
+    var ticket = getId('ticketError');
+    ticket.innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
+    ticket.scrollIntoView();
     return false;
   }
   // ticketStdF.options[0].value = "0";
   return true;
 }
 function formValidate(){
-    //alert("hi");
-    if(!ticketCheck()){
-      return false;
-    }
+  //alert("hi");
+  if(!ticketCheck()){
+    return false;
+  }
+  // var movTitle = getId('movieTitle');
+  // movTitle.scrollIntoView();
   return true;
   // var countForm=0;
   // if(!nameCheck()){

@@ -1,12 +1,17 @@
 <?php
-   session_start();
+  session_start();
    // include_path='C:\xampp\php\PEAR'
+  //session_destroy();
+
   if (isset($_POST["append"])) {
     $_SESSION['cart'][]=$_POST;
   } 
   else if (isset($_POST["checkout"])){
     $_SESSION['cart'][]=$_POST;
+    header('Location: cart.php');
   }
+  //unset ($_SESSION['cart']);
+  // session_unset();
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,8 +61,6 @@
 		</div>
 	</article>
 </main>
-<?php require_once("footer-module.php"); 
-	include_once("https://titan.csit.rmit.edu.au/home/eh1/e54061/public_html/wp/debug.php");
-?>
+<?php require_once("footer-module.php"); ?>
 </body>
 </html>

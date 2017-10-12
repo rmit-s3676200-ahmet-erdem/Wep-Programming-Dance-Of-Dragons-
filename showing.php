@@ -1,12 +1,17 @@
 <?php
   session_start();
    // include_path='C:\xampp\php\PEAR'
+  //session_destroy();
+
   if (isset($_POST["append"])) {
     $_SESSION['cart'][]=$_POST;
   } 
   else if (isset($_POST["checkout"])){
     $_SESSION['cart'][]=$_POST;
+    header('Location: cart.php');
   }
+  //unset ($_SESSION['cart']);
+  // session_unset();
 ?>
 <!DOCTYPE html>
 <html>
@@ -107,7 +112,7 @@
 </div>
   <!-- Starting form code sourced and adapted from https://titan.csit.rmit.edu.au/~e54061/wp/silverado-test.php -->
   <div class="container form">
-    <form action='https://titan.csit.rmit.edu.au/~e54061/wp/silverado-test.php?ref=showing' onsubmit='return formValidate()' method='post' id='tickets'>
+    <form action="#tickets" onsubmit='return formValidate();' method='post' id='tickets'>
         <fieldset><legend>Booking Form:</legend>
           <div class="row">
             <div class="five columns">
@@ -122,7 +127,7 @@
             </div>
             <div class="five columns">
               <label>Select Session:</label>
-                <select onchange='sessionFunction()' class='dropdown u-full-width' name='session' id='session' required>
+                <select onchange='sessionFunction();' class='dropdown u-full-width' name='session' id='session' required>
                   <option selected disabled value="">Select Session</option>
                 </select>
             </div>
@@ -318,12 +323,20 @@
           <input class="button-primary" type="submit" name="append" value="Add to Cart" id="append">
         </fieldset>
         </form>
+        <?php echo sizeof($_SESSION['cart']);  // undefined
+          $converted_res = (isset($_SESSION['cart'])) ? 'true' : 'false';
+          echo "hi " . $converted_res;
+          // if(isset($_SESSION['cart'])){ // true
+          //        unset ($_SESSION['cart']); 
+          //     }
+          echo sizeof($_SESSION['cart'][0]); //undefined
+          echo sizeof($_SESSION['cart'][1]);
+          // echo sizeof($_SESSION['cart'];    //0
+        ?>
     </div>
   </article>
 </main>
-  <?php require_once("footer-module.php"); 
-    include_once("https://titan.csit.rmit.edu.au/home/eh1/e54061/public_html/wp/debug.php");
-  ?>
+<?php require_once("footer-module.php"); ?>
   <script type="text/javascript" src="form.js"></script>
   </body>
   <script type="text/javascript" src="showing.js"></script>
