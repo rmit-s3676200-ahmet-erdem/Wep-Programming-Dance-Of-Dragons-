@@ -16,9 +16,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title>Cart</title>
+  <?php require_once("top-module.php"); ?>
 </head>
+  <?php require_once("header-nav-module.php"); ?>
+  echo gettype($_SESSION['cart']);
 <body>
-	<H1>Thank you!</H1>
-</body>
+  <main>
+    <?
+    $getCart= array_keys($_SESSION['cart']);
+
+    for($i=0; $i<sizeof($getCart); $i++) { 
+    $index = $$pega_array = $_SESSION["dados"][$i]; 
+  ?>
+
+  </main>
+<?php require_once("footer-module.php"); ?>
+  </body>
 </html>
