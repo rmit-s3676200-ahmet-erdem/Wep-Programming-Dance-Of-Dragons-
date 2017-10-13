@@ -7,8 +7,8 @@
     $_SESSION['cart'][]=$_POST;
   } 
   else if (isset($_POST["checkout"])){
-    $_SESSION['cart'][]=$_POST;
     header('Location: cart.php');
+    // $_SESSION['cart'][]=$_POST;  
   }
   //unset ($_SESSION['cart']);
   // session_unset();
@@ -19,7 +19,7 @@
     <title>Now Showing</title>
     <?php require_once("top-module.php"); ?>
   </head>
-<body onload="showMovie()";>
+<body onload='showMovie();'>
   <?php require_once("header-nav-module.php"); ?>
 <main>
 <article>
@@ -33,8 +33,8 @@
     </div>
   </div>
 <div id="carousel">
-  <button class="button-primary" onclick="plusmovie(-1)">Prev</button>
-  <button class="button-primary" onclick="plusmovie(+1)">Next</button>
+  <button class="button-primary" onclick='plusmovie(-1);'>Prev</button>
+  <button class="button-primary" onclick='plusmovie(+1);'>Next</button>
 </div>
   <div class="container">
     <div class="row">
@@ -112,7 +112,7 @@
 </div>
   <!-- Starting form code sourced and adapted from https://titan.csit.rmit.edu.au/~e54061/wp/silverado-test.php -->
   <div class="container form">
-    <form action="#tickets" onsubmit='return formValidate();' method='post' id='tickets'>
+    <form action='#tickets' onsubmit='return formValidate();' method='post' id='tickets'>
         <fieldset><legend>Booking Form:</legend>
           <div class="row">
             <div class="five columns">
@@ -323,8 +323,8 @@
             //foreach ($_SESSION['cart'] as &$value) {}
             $counter = count($_SESSION['cart']);
           } ?>
-          <input class="button-primary" type="submit" name="checkout" value="checkout" id="book" >
-          <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counter; ?>)" id="append">
+          <input class="button-primary" type="submit" name="checkout" value="checkout" id="book" onclick = 'submissionAllowedForAppendedCart(); clickForCheckout();' >
+          <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counter; ?>)" id="append" onclick= 'clickForAppend();'>
         </fieldset>
         </form>
         <?php echo isset($_SESSION['cart']);  // undefined

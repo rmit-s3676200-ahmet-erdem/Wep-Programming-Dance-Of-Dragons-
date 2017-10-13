@@ -392,17 +392,39 @@ function ticketCheck(){
   //alert(typeof cartCounter);
   //alert("TOP Hello");
   //alert(cartCounter == "Add to Cart(0)");
-  if(ticketStdF.options[0].selected === true && ticketStdCo.options[0].selected === true && ticketStdCh.options[0].selected === true && ticketPreAd.options[0].selected === true && ticketPreCh.options[0].selected === true && ticketBeanAd.options[0].selected === true && ticketBeanFa.options[0].selected === true && ticketBeanCh.options[0].selected === true && cartCounter == "Add to Cart(0)"){
-    //alert("hello");
-    var ticket = getId('ticketError');
-    ticket.innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
-    ticket.scrollIntoView();
-    return false;
-  }
-  // ticketStdF.options[0].value = "0";
+  // && cartCounter == "Add to Cart(0)"
+  //alert("Hi");
+  //alert(getId('append').onclick == true);
+  // if(getId('append').onclick == true){
+  //   //alert("That's true! append clicked");
+  // }
+    //alert("That's true! Append clicked");
+
   return true;
 }
-function SubmissionAllowedForAppendedCart(){
+// var appendValue = false;
+// var checkoutValue = true;
+function clickForAppend(){
+  var ticketStdF = getId('stdFSeat');
+  var ticketStdCo = getId('stdCoSeat');
+  var ticketStdCh = getId('stdChSeat');
+  var ticketPreAd = getId('preAd');
+  var ticketPreCh = getId('preCh');
+  var ticketBeanAd = getId('beanAd');
+  var ticketBeanFa = getId('beanFa');
+  var ticketBeanCh = getId('beanCh');
+  var cartCounter = getId('append').value;
+
+  if(ticketStdF.options[0].selected === true && ticketStdCo.options[0].selected === true && ticketStdCh.options[0].selected === true && ticketPreAd.options[0].selected === true && ticketPreCh.options[0].selected === true && ticketBeanAd.options[0].selected === true && ticketBeanFa.options[0].selected === true && ticketBeanCh.options[0].selected === true){
+      //alert("hello");
+      var ticket = getId('ticketError');
+      ticket.innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
+      ticket.scrollIntoView();
+      return true;
+    }
+    return false;
+}
+function clickForCheckout(){
   var cartCounter = getId('append').value;
   if(cartCounter != "Add to Cart(0)"){
     var movieSelection = getId('movieTitle');
@@ -411,12 +433,45 @@ function SubmissionAllowedForAppendedCart(){
     var sessionMovies = getId('session');
     sessionMovies_required = sessionMovies.getAttributeNode("required");
     sessionMovies.removeAttributeNode(sessionMovies_required);
+    // var formActionDelete = getId('tickets');
+    // formAction = formActionDelete.getAttributeNode("action");
+    // formMethodDelete.removeAttributeNode(formAction);
+  }
+  var ticketStdF = getId('stdFSeat');
+  var ticketStdCo = getId('stdCoSeat');
+  var ticketStdCh = getId('stdChSeat');
+  var ticketPreAd = getId('preAd');
+  var ticketPreCh = getId('preCh');
+  var ticketBeanAd = getId('beanAd');
+  var ticketBeanFa = getId('beanFa');
+  var ticketBeanCh = getId('beanCh');
+  //var cartCounter = getId('append').value;
+  if(ticketStdF.options[0].selected === true && ticketStdCo.options[0].selected === true && ticketStdCh.options[0].selected === true && ticketPreAd.options[0].selected === true && ticketPreCh.options[0].selected === true && ticketBeanAd.options[0].selected === true && ticketBeanFa.options[0].selected === true && ticketBeanCh.options[0].selected === true && cartCounter == "Add to Cart(0)"){
+      //alert("hello");
+      var ticket = getId('ticketError');
+      ticket.innerHTML="*You must choose at least one ticket to checkout or to add your cart.";
+      ticket.scrollIntoView();
+      return true;
+    }   
+    return false;
+}
+function submissionAllowedForAppendedCart(){
+  var cartCounter = getId('append').value;
+  if(cartCounter != "Add to Cart(0)"){
+    var movieSelection = getId('movieTitle');
+    movieSelection_required = movieSelection.getAttributeNode("required");
+    movieSelection.removeAttributeNode(movieSelection_required); 
+    var sessionMovies = getId('session');
+    sessionMovies_required = sessionMovies.getAttributeNode("required");
+    sessionMovies.removeAttributeNode(sessionMovies_required);
+    // var formActionDelete = getId('tickets');
+    // formAction = formActionDelete.getAttributeNode("action");
+    // formMethodDelete.removeAttributeNode(formAction);
   }
 }
 function formValidate(){
   //alert("hi");
-  SubmissionAllowedForAppendedCart();
-  if(!ticketCheck()){
+  if(clickForCheckout() || clickForAppend()){
     return false;
   }
   // var movTitle = getId('movieTitle');
