@@ -6,10 +6,6 @@
   if (isset($_POST["append"])) {
     $_SESSION['cart'][]=$_POST;
   } 
-  else if (isset($_POST["checkout"])){
-    $_SESSION['cart'][]=$_POST;
-    header('Location: cart.php');
-  }
   //unset ($_SESSION['cart']);
   // session_unset();
 ?>
@@ -19,7 +15,7 @@
     <title>Now Showing</title>
     <?php require_once("top-module.php"); ?>
   </head>
-<body onload="showMovie()";>
+<body onload='showMovie(); checkOutControl();'>
   <?php require_once("header-nav-module.php"); ?>
 <main>
 <article>
@@ -33,8 +29,8 @@
     </div>
   </div>
 <div id="carousel">
-  <button class="button-primary" onclick="plusmovie(-1)">Prev</button>
-  <button class="button-primary" onclick="plusmovie(+1)">Next</button>
+  <button class="button-primary" onclick='plusmovie(-1);'>Prev</button>
+  <button class="button-primary" onclick='plusmovie(+1);'>Next</button>
 </div>
   <div class="container">
     <div class="row">
@@ -112,7 +108,7 @@
 </div>
   <!-- Starting form code sourced and adapted from https://titan.csit.rmit.edu.au/~e54061/wp/silverado-test.php -->
   <div class="container form">
-    <form action="#tickets" onsubmit='return formValidate();' method='post' id='tickets'>
+    <form onsubmit='return formValidate();' method='post' id='tickets'>
         <fieldset><legend>Booking Form:</legend>
           <div class="row">
             <div class="five columns">
@@ -323,15 +319,15 @@
             //foreach ($_SESSION['cart'] as &$value) {}
             $counter = count($_SESSION['cart']);
           } ?>
-          <input class="button-primary" type="submit" name="checkout" value="checkout"  id="checkout" > 
+          <!-- <a class="button button-primary" href="cart.php" >Checkout</a> -->
+          <input class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php"></a></input>
+
           <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counter; ?>)" id="append">
-          
         </fieldset>
         </form>
-
         <?php echo isset($_SESSION['cart']);  // undefined
-          //$converted_res = (isset($_SESSION['cart'])) ? 'true' : 'false';
-          //echo "hi". $converted_res;
+          $converted_res = (isset($_SESSION['cart'])) ? 'true' : 'false';
+          echo "hi " . $converted_res;
           // if(isset($_SESSION['cart'])){ // true
           //        unset ($_SESSION['cart']); 
           //     }
