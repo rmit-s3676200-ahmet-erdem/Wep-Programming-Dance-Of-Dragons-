@@ -5,12 +5,11 @@
 
   if (isset($_POST["append"])) {
     $_SESSION['cart'][]=$_POST;
-    header('Location: cart.php');
   } 
-  // else if (isset($_POST["checkout"])){
-  //   $_SESSION['cart'][]=$_POST;
-    
-  // }
+  else if (isset($_POST["checkout"])){
+    $_SESSION['cart'][]=$_POST;
+    header('Location: cart.php');
+  }
   //unset ($_SESSION['cart']);
   // session_unset();
 ?>
@@ -63,5 +62,6 @@
 	</article>
 </main>
 <?php require_once("footer-module.php"); ?>
+<?php include_once("/home/eh1/e54061/public_html/wp/debug.php"); ?>
 </body>
 </html>
