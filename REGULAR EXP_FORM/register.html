@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="formAd.js"></script>
+</head>
+<body class="bodyBack">
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="basics.html"><h1 class="brand">RA</h1></a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    	<ul class="nav navbar-nav">
+	    		<li>
+	    			<a href="https://www.royalacademy.org.uk/exhibitions-and-events" target="_blank">Exhibition & Events</a>
+	    		</li>
+	    		<li>
+	    			<a href="https://www.royalacademy.org.uk/news-and-blog" target="_blank">News & Blog</a>
+	    		</li>
+	    		<li>
+	    			<a href="https://www.royalacademy.org.uk/artists" target="_blank">Artists</a>
+	    		</li>
+	    	</ul>
+	    	<ul class="nav navbar-nav navbar-right">
+	    		<div class="navbar-btn">
+	    			<li>
+	    			 	<a class="btn btn-warning btn-xs navbar-btn staff" href="loginStaff.html">Login as Staff</a>
+	    			 	<a class="btn btn-warning btn-xs navbar-btn admin" href="loginAdmin.html">Login as Admin</a>
+	    			</li>
+	    		</div>	        
+	    	</ul>
+	    </div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<ul class="nav nav-pills">
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/contact-us" target="_blank">Contact us</a></li>
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/press-office" target="_blank">Press</a></li>
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/careers-at-the-ra" target="_blank">Careers</a></li>
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/copyright-policy" target="_blank">Copyright</a></li>
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/terms-and-conditions" target="_blank">Terms and Conditions</a></li>
+		<li role="presentation"><a href="https://www.royalacademy.org.uk/privacy" target="_blank">Privacy</a></li>
+	</ul>
+	<div class="container container-outside">
+		<form method="post" id="formback" class="formback form-box" action ="ArtController" method="post" onsubmit="return formValidate()">
+			<input name="source" id="source" type="hidden" class="form-control" value="RegisterUser">
+			<label class="form-style-2-heading" for="adUsername">Visitor Registration</label>
+			<span> <br> </span>
+			<label for="regname">First Name: </label>
+			<input name="firstName" id="regname" type="text" class="form-control login-input" placeholder="John" required>
+			<span class='error' id='fnameError'></span>
+			<label for="reglast">Last Name: </label>
+			<input name="lastName" id="reglast" type="text" class="form-control login-input" placeholder="Smith" required>
+			<span class='error' id='lnameError'></span>
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="email" class="form-control login-input" id="exampleInputEmail1" placeholder="Email" name="email" required>
+			<label for="usname">Username: </label>
+			<input name="username" id="usname" type="text" class="form-control login-input" placeholder="Username" required>
+			<span class='error' id='nameError'></span>
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control login-input" id="password" placeholder="Password" name="password" required>
+			<span class='error' id='passwordError'></span>
+			<label for="age">Age: </label>
+			<input name="age" id="age" type="text" class="form-control login-input" placeholder="Age" required>
+			<span class='error' id='ageError'></span>
+			<label for="dob">Date of Birth </label>
+			<input name="birthdate" id="dob" type="date" class="form-control login-input" required>
+			<label for="phno">Phone Number </label>
+			<input name="phNo" id="phNo" type="text" class="form-control login-input" required>
+			<span class='error' id='phNoError'></span>
+			<input name="submit" id="sub" type="submit" class="form-control login-input" required>
+		</form>		
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="bootstrap.js"></script>
+</body>
+</html>
