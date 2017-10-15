@@ -194,6 +194,7 @@ fieldset{
 .timechart{
   font-size: 3.5vh;
   box-shadow: none;
+  width: 90%;
 }
 
 .timechart> li{
