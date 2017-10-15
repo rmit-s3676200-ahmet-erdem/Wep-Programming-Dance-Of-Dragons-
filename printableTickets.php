@@ -34,18 +34,34 @@ session_start();
 <?php require_once("header-nav-module.php"); ?>
 <body>
 <?php 
+	$lastIndex = 0;
 	foreach ($_SESSION as $value1) { //returns the array from [cart] => array()
+		//$sessionLastIndex = count($_SESSION['cart']) - 1;
+		// if($value1 == $_SESSION['cart'][$sessionLastIndex]){
+		// 	break;
+		// }
+		// if($lastIndex == count($_SESSION['cart'])){
+		// 	break;
+		// }
 		$userArray = end($value1);
 		// print_r($userArray);
 		$userName = $userArray['name'];
 		$userEmail = $userArray['email'];
 		$userPhone = $userArray['phNo'];
-		echo "<div class='order'>";
-		echo "<p>".$userName."</p>";
-		echo "<p>".$userEmail."</p>";
-		echo "<p>".$userPhone."</p>";
+		//$sizeOfCart = count($_SESSION['cart']);
 		//echo "</div>";
-		foreach ($value1 as $value2) { // returns the array from [0] =? array()
+		foreach ($value1 as $value2) { // returns the array from [0] => array()
+			$lastIndex++;
+			if($lastIndex == count($_SESSION['cart'])){
+				break;
+			}
+			echo "<div class='order'>";
+			//echo "<p>".count($_SESSION['cart'])."</p>";
+			//$tryMe = $userArray == $_SESSION['cart'][$sessionLastIndex] ? 'true' : 'false';
+			echo "<p>".$userName."</p>";
+			echo "<p>".$userEmail."</p>";
+			echo "<p>".$userPhone."</p>";
+			$total = 0;
 			$movie = $value2['movie'];
 			$day = $value2['session'];
 			$movieName;
@@ -131,9 +147,11 @@ session_start();
 			else if($day == "SUN-21"){
 				$date = "Sunday 9pm";
 			}
-
+			echo "<p>Silverado Cinema</p>";
+			echo "<p>Movie :".$movieName."</p>";
+			echo "<p>Contact: ".$userPhone."</p>";
+			echo "<p>Session Date: ".$date."</p>";
 			$seat = $value2['seats']; // $seat is the array of seats
-			$total = 0;
 			foreach ($seat as $key => $valuex) {
 				$cost;
 				$quantity;
@@ -156,7 +174,7 @@ session_start();
 						echo "<p>".$quantity." x Standard (Full) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "SP" && $numberOfSeats != 0){
+				else if($seatType == "SP" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 10.50;
 						$quantity = $numberOfSeats;
@@ -172,7 +190,7 @@ session_start();
 						echo "<p>".$quantity." x Standard (Concession) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "SC" && $numberOfSeats != 0){
+				else if($seatType == "SC" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 8.50;
 						$quantity = $numberOfSeats;
@@ -188,7 +206,7 @@ session_start();
 						echo "<p>".$quantity." x Standard (Child) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "FA" && $numberOfSeats != 0){
+				else if($seatType == "FA" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 25.00;
 						$quantity = $numberOfSeats;
@@ -204,7 +222,7 @@ session_start();
 						echo "<p>".$quantity." x First Class (Adult) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "FC" && $numberOfSeats != 0){
+				else if($seatType == "FC" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 20.00;
 						$quantity = $numberOfSeats;
@@ -220,7 +238,7 @@ session_start();
 						echo "<p>".$quantity." x First Class (Child) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "BA" && $numberOfSeats != 0){
+				else if($seatType == "BA" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 22.00;
 						$quantity = $numberOfSeats;
@@ -236,7 +254,7 @@ session_start();
 						echo "<p>".$quantity." x Beanbag (Adult) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "BF" && $numberOfSeats != 0){
+				else if($seatType == "BF" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 20.00;
 						$quantity = $numberOfSeats;
@@ -252,7 +270,7 @@ session_start();
 						echo "<p>".$quantity." x Beanbag (Family) $".number_format((float)$subtotal, 2, '.', '')."</p>";
 					}
 				}
-				if($seatType == "BC" && $numberOfSeats != 0){
+				else if($seatType == "BC" && $numberOfSeats != 0){
 					if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 						$cost = 20.00;
 						$quantity = $numberOfSeats;
@@ -269,9 +287,9 @@ session_start();
 					}
 		    }
 	    }
-	    echo "<p>$".number_format((float)$total, 2, '.', '')."</p>";
+	    echo "<p>Total: $".number_format((float)$total, 2, '.', '')."</p></div>";
+
     }
-    echo "</div>";
   }
  ?>
 <?php require_once("footer-module.php"); ?>

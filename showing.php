@@ -20,8 +20,9 @@
   <?php require_once("header-nav-module.php"); ?>
 <main>
 <article>
+<!-- carousel adapted from W3School Tutorial: https://www.w3schools.com/w3css/w3css_slideshow.asp -->
   <div id="showing" class="container">
-  <div class="row">
+  	<div class="row">
       <div class="twelve columns dimension timechart">
         <img class="movie" src="https://image.ibb.co/mfF6nQ/despicableme3_16.jpg" alt="Despicable Me" border="0">
       </div>
@@ -36,7 +37,6 @@
       </div>        
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="six columns dimension timechart">
@@ -45,14 +45,13 @@
           <li>Wed-Fri 6pm</li>
           <li>Sat-Sun 12pm</li>
       </div>
-	<div class="six columns dimension timechart">
-      <ul>The Big Sick</ul>
-        <li>Mon-Tue 9pm*</li>
-        <li>Wed-Fri 1pm*</li>
-        <li>Sat-Sun 6pm</li>
+      <div class="six columns dimension timechart">
+        <ul>Atomic Blonde</ul>
+          <li>Wed-Fri 9pm</li>
+          <li>Sat-Sun 9pm</li>
+          <li></li>
+      </div>
     </div>
-</div>
-      
   <div class="row">
     <div class="six columns dimension timechart">
       <ul>Madame</ul>
@@ -60,40 +59,34 @@
         <li>Sat-Sun 3pm</li>
         <li></li>
     </div>
-	<div class="six columns dimension timechart">
-        <ul>Atomic Blonde</ul>
-          <li>Wed-Fri 9pm</li>
-          <li>Sat-Sun 9pm</li>
-          <li></li>
-      </div>
-    
+    <div class="six columns dimension timechart">
+      <ul>The Big Sick</ul>
+        <li>Mon-Tue 9pm*</li>
+        <li>Wed-Fri 1pm*</li>
+        <li>Sat-Sun 6pm</li>
+    </div>
   </div>
 </div>
-
   <div class="container">
     <div class="row">
       <div class="twelve columns dimension timechart">
         <p><strong>Enjoy our movies paying less!</strong><p>
-        <p>Discount tickets(*) for any session on Mondays and Tuesdays, and 1pm sessions from Monday to Friday!</p>
-          </div>
-	</div>
-</div>
-
-<div class = "container">
+        <p>Discount tickets for any session on Mondays and Tuesdays, and 1pm sessions from Monday to Friday!</p>
+        <p>* shows discount prices</p>
         <div class=" row">
-	<div class="four columns dimension timechart">
-         <ul>Standard Seats</ul>	  
-	<li>Adult:</li>
-	<li>$ 12.50*</li>
-	<li>$ 18.50</li>
-	<li>Concession:</li>
-	<li>$ 10.50*</li>
-	<li>$ 15.50</li>
-	<li>Child:</li>
-	<li>$ 8.50*</li>
-	<li>$ 12.50</li>
-	</div>
-	<div class="four columns dimension timechart">
+          <div class="four columns dimension timechart">
+            <ul>Standard Seats Prices</ul>
+              <li>Adult:</li>
+              <li>$ 12.50*</li>
+              <li>$ 18.50</li>
+              <li>Concession:</li>
+              <li>$ 10.50*</li>
+              <li>$ 15.50</li>
+              <li>Child:</li>
+              <li>$ 8.50*</li>
+              <li>$ 12.50</li>
+          </div>
+          <div class="four columns dimension timechart">
             <ul>Premium Seats Prices</ul>
               <li>Adult:</li>
               <li>$ 25.00*</li>
@@ -102,7 +95,7 @@
               <li>$ 20.00*</li>
               <li>$ 25.00</li>
           </div>
-    <div class="four columns dimension timechart">
+          <div class="four columns dimension timechart">
             <ul>Bean Bags Prices</ul>
               <li>Adult:</li>
               <li>$ 22.00*</li>
@@ -113,8 +106,9 @@
               <li>Child:</li>
               <li>$ 20.00*</li>
               <li>$ 30.00</li>
-          </div>
-
+          </div>         
+        </div>
+      </div>
   </div>
 </div>
   <!-- Starting form code sourced and adapted from https://titan.csit.rmit.edu.au/~e54061/wp/silverado-test.php -->
@@ -331,8 +325,8 @@
             //alert("TRUe");
             $counterx = count($_SESSION['cart']);
           } ?>
-          <a class="button button-primary" href="cart.php" >Go to Cart</a> 
-          <!-- <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">Checkout</a></button>-->
+          <!-- <a class="button button-primary" href="cart.php" >Checkout</a> -->
+          <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">Checkout</a></button>
           <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counterx; ?>)" id="append">
         </fieldset>
         </form>
