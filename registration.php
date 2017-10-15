@@ -23,7 +23,7 @@
 <main>
 
 	<div class="container">
-		<form method="post" id="registration" class="form" method="post" onsubmit="return formValidate()">
+		<form method='post' id='registration' class='form' method='post' onsubmit='return formValidation();'>
 			<input name="source" id="source" type="hidden" class="form-control" value="RegisterUser">
 			<label for="name">Name: </label>
 			<input name="name" id="name" type="text" placeholder="John" required>
@@ -45,6 +45,6 @@
 	</main>
 <?php require_once("footer-module.php"); ?>
 <?php include_once("/home/eh1/e54061/public_html/wp/debug.php"); ?>
-  <script type="text/javascript" src="formValidate.js"></script>
+  <script type="text/javascript" src="formValidate.js?v=2"></script>
   </body>
 </html>
