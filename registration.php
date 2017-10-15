@@ -3,15 +3,12 @@
    // include_path='C:\xampp\php\PEAR'
   //session_destroy();
   $counter = 0;
-  if (isset($_POST["append"])) {
+  if (isset($_POST["ticketSubmit"])) {
     $_SESSION['cart'][]=$_POST;
   } 
-  else if (isset($_POST["checkout"])){
-    $_SESSION['cart'][]=$_POST;
-    header('Location: cart.php');
-  }
   //unset ($_SESSION['cart']);
   // session_unset();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +20,7 @@
 <main>
 
 	<div class="container">
-		<form method="post" id="registration" class="form" method="post" onsubmit="return formValidate()">
+		<form method='post' id='registration' class='form' method='post' onsubmit='return formValidation();'>
 			<input name="source" id="source" type="hidden" class="form-control" value="RegisterUser">
 			<label for="name">Name: </label>
 			<input name="name" id="name" type="text" placeholder="John" required>
@@ -36,7 +33,7 @@
 			<label for="phno">Phone Number </label>
 			<input name="phNo" id="phNo" type="text" required>
 			<span class='error' id='phNoError'></span>
-			<input name="submit" id="sub" type="submit" required>
+			<input name="ticketSubmit" id="sub" type="submit">
 		</form>		
 	</div>
 </body>
@@ -45,6 +42,6 @@
 	</main>
 <?php require_once("footer-module.php"); ?>
 <?php include_once("/home/eh1/e54061/public_html/wp/debug.php"); ?>
-  <script type="text/javascript" src="formValidate.js"></script>
+  <script type="text/javascript" src="formValidate.js?v=2"></script>
   </body>
 </html>
