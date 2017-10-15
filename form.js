@@ -1,7 +1,7 @@
-var movieTable = [["CH","MON-13","TUE-13","WED-18","THU-18","FRI-18","SAT-12","SUN-12"],
-["AF","MON-18","TUE-18","SAT-15","SUN-15"],
-["RC","MON-21","TUE-21","WED-13","THU-13","FRI-13","SAT-18","SUN-18"],
-["AC","WED-21","THU-21","FRI-21","SAT-21","SUN-21"]
+var movieTable = [["CH","MON-16","TUE-17","WED-18","THU-19","FRI-20","SAT-21","SUN-22"],
+["AF","MON-16","TUE-17","SAT-21","SUN-22"],
+["RC","MON-16","TUE-17","WED-18","THU-19","FRI-20","SAT-21","SUN-22"],
+["AC","WED-18","THU-19","FRI-20","SAT-21","SUN-22"]
 ];
 // var movie = ["CH","AF","RC","AC"];
 // var session = [];
