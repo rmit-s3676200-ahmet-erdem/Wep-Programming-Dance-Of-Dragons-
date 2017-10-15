@@ -31,9 +31,9 @@
 		<div class="container">
 			<table>
 			  	<?php 
-			  	$grandTotal = 0;
-			  		foreach ($_SESSION as $value1) { //this type foreach returns the values
-			  			foreach ($value1 as $value2) {
+			  	//$grandTotal = 0;
+			  		foreach ($_SESSION as $value1) { //returns the array from [cart] => array()
+			  			foreach ($value1 as $value2) { // returns the array from [0] =? array()
 			  				$total = 0;
 			  				$movie = $value2['movie'];
 			  				$day = $value2['session'];
@@ -119,99 +119,197 @@
 			  					echo "<p>Showing at Sunday, 9pm</p>";
 			  				}
 			  				echo "<tr><th>Ticket Type</th><th>Cost</th><th>Qty</th><th>Subtotal</th></tr>";
-			  				echo "<tr>";
-			  				foreach ($seat as $key => $value3) {
-			  					if($value3 == 0){
-			  						continue;
-			  					}
+			  				$seat = $value2['seats']; // $seat is the array of seats
+			  				foreach ($seat as $key => $valuex) {
 			  					$cost;
+			  					$quantity;
+			  					$subtotal = 0;
+			  					$total = 0;
 			  					$seatType = $key;
-			  					$quantity = $value3;
-			  					if($seatType == "SF"){
-			  						echo $seatType;
-			  						echo "<td>Standard (Full)</td>";
+			  					$numberOfSeats = $valuex;
+			  					if($seatType == "SF" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<tr><td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 12.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 18.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "SP"){
-			  						echo "<td>Standard (Concession)</td>";
+			  					if($seatType == "SP" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 10.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 15.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "SC"){
-			  						echo "<td>Standard (Child)</td>";
+			  					if($seatType == "SC" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 8.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 12.50;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "FA"){
-			  						echo "<td>First Class (Adult)</td>";
+			  					if($seatType == "FA" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 25.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "FC"){
-			  						echo "<td>First Class (Child)</td>";
+			  					if($seatType == "FC" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 20.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 25.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "BA"){
-			  						echo "<td>Beanbag (Adult)</td>";
+			  					if($seatType == "BA" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 22.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 33.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "BF"){
-			  						echo "<td>Beanbag (Family)</td>";
+			  					if($seatType == "BF" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 20.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr></tr>";
 			  						}
 			  					}
-			  					else if($seatType == "BC"){
-			  						echo "<td>Beanbag (Child)</td>";
+			  					if($seatType == "BC" && $numberOfSeats != 0){
+			  						//echo "HELLOW WORLD";
+			  						echo "<td>Standard (Full)</td>";
 			  						if($day == "MON-13" || $day == "TUE-13" || $day == "WED-13" || $day == "THU-13" || $day == "FRI-13" || $day == "MON-18" || $day == "MON-21"){
 			  							$cost = 20.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
+			  							$quantity = $numberOfSeats;
+			  							$subtotal = $cost * $quantity;
+			  							$total += $subtotal;
+			  							echo "<td>".$cost."</td>";
+			  							echo "<td>".$quantity."</td>";
+			  							echo "<td>".$subtotal."</td></tr>";
 			  						}
 			  					}
-			  					echo "<td>".$cost."</td>";
-			  					echo "<td>".$quantity."</td>";
-			  					$subtotal = $cost * $quantity;
-			  					$total += $subtotal;
-			  					$grandTotal += $total;
-			  					echo "<td>Total</td>";
-			  					echo "<td>".$total."</td>";
-			  					echo "</tr>";
 			  				}
+			  				echo "<tr><td>Total: </td>";
+			  				echo "<td></td>";
+			  				echo "<td></td>";
+			  				echo "<td>".$total."</td></tr>";
 			  			}
 			  		}
-			  		echo "<p>Grand Total: ".$grandTotal."</p>";
 			  	 ?>
 			</table>
 		</div>
