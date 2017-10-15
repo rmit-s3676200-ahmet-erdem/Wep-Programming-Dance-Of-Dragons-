@@ -29,11 +29,12 @@
 <body>
 	<article>
 		<div class="container">
-			<table>
 			  	<?php 
-			  	//$grandTotal = 0;
+			  	$grandTotal = 0;
 			  		foreach ($_SESSION as $value1) { //returns the array from [cart] => array()
+			  			//$grandTotal = 0;
 			  			foreach ($value1 as $value2) { // returns the array from [0] =? array()
+			  				echo "<table>";
 			  				$total = 0;
 			  				$movie = $value2['movie'];
 			  				$day = $value2['session'];
@@ -120,11 +121,11 @@
 			  				}
 			  				echo "<tr><th>Ticket Type</th><th>Cost</th><th>Qty</th><th>Subtotal</th></tr>";
 			  				$seat = $value2['seats']; // $seat is the array of seats
+			  				$total = 0;
 			  				foreach ($seat as $key => $valuex) {
 			  					$cost;
 			  					$quantity;
-			  					$subtotal = 0;
-			  					$total = 0;
+			  					$subtotal = 0;			  					
 			  					$seatType = $key;
 			  					$numberOfSeats = $valuex;
 			  					if($seatType == "SF" && $numberOfSeats != 0){
@@ -304,17 +305,17 @@
 			  						}
 			  					}
 			  				}
+			  				$grandTotal += $total;
 			  				echo "<tr><td>Total: </td>";
 			  				echo "<td></td>";
 			  				echo "<td></td>";
-			  				echo "<td>".$total."</td></tr>";
+			  				echo "<td>".$total."</td></tr></table>";
 			  			}
 			  		}
+			  		echo "<p>Grand Total: $".$grandTotal."</p>";
 			  	 ?>
-			</table>
 		</div>
 	</article>
-
 </body>
 </html>
   </main>
