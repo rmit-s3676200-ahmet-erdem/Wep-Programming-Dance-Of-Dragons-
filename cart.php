@@ -42,19 +42,19 @@
 						$day = $value2['session'];
 						if($movie == "CH"){
 							// $counter++;
-							echo "<p><span class='movieCart'><b>Despicable Me (G),</b></span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+							echo "<p><span class='movieCart'><b>Despicable Me 3 (G)</b> &nbsp  &nbsp</span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
 						}
 						else if($movie == "AC"){
 							// $counter++;
-							echo "<p><span class='movieCart'><b>Atomic Blonde (M),</b></span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+							echo "<p><span class='movieCart'><b>Atomic Blonde (M)</b> &nbsp  &nbsp</span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
 						}
 						else if($movie == "RC"){
 							// $counter++;
-							echo "<p><span class='movieCart'><b>The Big Sick (M),</b></span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+							echo "<p><span class='movieCart'><b>The Big Sick (M)</b> &nbsp  &nbsp</span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
 						}
 						else if($movie == "AF"){
 							// $counter++;
-							echo "<p><span class='movieCart'><b>Madame (M),</b></span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+							echo "<p><span class='movieCart'><b>Madame (M)</b> &nbsp &nbsp </span></p><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
 						}
 						if($day == "MON-13"){
 							echo "<p>Showing at Monday, 1pm</p>";
@@ -319,7 +319,8 @@
 					}
 				}
 				echo "<table><tr><p>Grand Total: $".number_format((float)$grandTotal, 2, '.', '')."</p></tr></table></form>";
-				echo "<button class='button-primary' type='button' name='checkout' value='checkout' id='book'><a href='registration.php'>CONFIRM</a></button>";
+				echo "<button class='button-primary' type='button' name='checkout' value='checkout' id='book'><a href='showing.php'>Go Back</a></button>";
+				echo "<button class='button-primary' type='button' name='checkout' value='checkout' id='book'><a href='registration.php'>Confirm Order</a></button>";
 			 ?>
 		</div>
 	</article>
