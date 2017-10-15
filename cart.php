@@ -136,18 +136,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 18.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "SP" && $numberOfSeats != 0){
@@ -158,18 +158,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 15.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "SC" && $numberOfSeats != 0){
@@ -180,18 +180,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 12.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "FA" && $numberOfSeats != 0){
@@ -202,18 +202,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "FC" && $numberOfSeats != 0){
@@ -224,18 +224,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 25.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BA" && $numberOfSeats != 0){
@@ -246,18 +246,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 33.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BF" && $numberOfSeats != 0){
@@ -268,18 +268,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr></tr>";
+			  							echo "<td>$".$subtotal."</td></tr></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr></tr>";
+			  							echo "<td>$".$subtotal."</td></tr></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BC" && $numberOfSeats != 0){
@@ -290,18 +290,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>".$cost."</td>";
+			  							echo "<td>$".$cost."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>".$subtotal."</td></tr>";
+			  							echo "<td>$".$subtotal."</td></tr>";
 			  						}
 			  					}
 			  				}
@@ -309,10 +309,10 @@
 			  				echo "<tr><td>Total: </td>";
 			  				echo "<td></td>";
 			  				echo "<td></td>";
-			  				echo "<td>".$total."</td></tr></table>";
+			  				echo "<td>$".$total."</td></tr></table>";
 			  			}
 			  		}
-			  		echo "<p>Grand Total: $".$grandTotal."</p>";
+			  		echo "<table><tr><p>Grand Total: $".$grandTotal."</p></tr></table>";
 			  	 ?>
 		</div>
 	</article>
