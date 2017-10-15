@@ -2,7 +2,7 @@
   session_start();
    // include_path='C:\xampp\php\PEAR'
   //session_destroy();
-  $counter = 0;
+  $counterx = 0;
   if (isset($_POST["append"])) {
     $_SESSION['cart'][]=$_POST;
   } 
@@ -322,12 +322,11 @@
           <?php if(isset($_SESSION['cart'])){
             //foreach ($_SESSION['cart'] as &$value) {}
             //alert("TRUe");
-            $counter = count($_SESSION['cart']);
+            $counterx = count($_SESSION['cart']);
           } ?>
           <!-- <a class="button button-primary" href="cart.php" >Checkout</a> -->
           <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">CLICK ME</a></button>
-
-          <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counter; ?>)" id="append">
+          <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counterx; ?>)" id="append">
         </fieldset>
         </form>
         <?php echo isset($_SESSION['cart']);  // undefined
@@ -339,11 +338,11 @@
           echo gettype($_SESSION['cart']);
           echo count($_SESSION);
           echo count($_SESSION['cart']);
-          echo count($_SESSION['cart'][0]);
-          echo count($_SESSION['cart'][0]);
+          //echo count($_SESSION['cart'][0]);
+          //echo count($_SESSION['cart'][0]);
           if(isset($_SESSION['cart'])){
             //foreach ($_SESSION['cart'] as &$value) {}
-            $counter = count($_SESSION['cart']);
+            $counterx = count($_SESSION['cart']);
           //$counter = count($_SESSION['cart']);
           //$counter = count($_SESSION['cart']);
           }

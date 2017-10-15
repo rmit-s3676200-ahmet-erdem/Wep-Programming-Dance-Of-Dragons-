@@ -2,7 +2,9 @@
   session_start();
    // include_path='C:\xampp\php\PEAR'
   //session_destroy();
-
+  if(isset($_POST["delete"])){
+  	unset($_SESSION['cart'][($counter - 1)]);
+  }
 ?>
 
 <html>
@@ -31,6 +33,8 @@
 		<div class="container">
 			  	<?php 
 			  	$grandTotal = 0;
+			  	$counter = 0;
+			  	//$sessionCartSize = count($_SESSION['cart']);
 			  		foreach ($_SESSION as $value1) { //returns the array from [cart] => array()
 			  			//$grandTotal = 0;
 			  			foreach ($value1 as $value2) { // returns the array from [0] =? array()
@@ -39,16 +43,24 @@
 			  				$movie = $value2['movie'];
 			  				$day = $value2['session'];
 			  				if($movie == "CH"){
-			  					echo "<p><b>Despicable Me (G)</b></p>";
+			  					$counter++;
+			  					echo "<p><span class='movieCart'><b>Despicable Me (G),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span></p>";
+			  					echo isset($_POST["delete"]);
 			  				}
 			  				else if($movie == "AC"){
-			  					echo "<p><b>Atomic Blonde (M)</b></p>";
+			  					$counter++;
+			  					echo "<p><span class='movieCart'><b>Atomic Blonde (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span></p>";
+			  					echo isset($_POST["delete"]);
 			  				}
 			  				else if($movie == "RC"){
-			  					echo "<p><b>The Big Sick (M)</b></p>";
+			  					$counter++;
+			  					echo "<p><span class='movieCart'><b>The Big Sick (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span></p>";
+			  					echo isset($_POST["delete"]);
 			  				}
 			  				else if($movie == "AF"){
-			  					echo "<p><b>Madame (M)</b></p>";
+			  					$counter++;
+			  					echo "<p><span class='movieCart'><b>Madame (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span></p>";
+			  					echo isset($_POST["delete"]);
 			  				}
 			  				if($day == "MON-13"){
 			  					echo "<p>Showing at Monday, 1pm</p>";
@@ -136,18 +148,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 18.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "SP" && $numberOfSeats != 0){
@@ -158,18 +170,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 15.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "SC" && $numberOfSeats != 0){
@@ -180,18 +192,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 12.50;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "FA" && $numberOfSeats != 0){
@@ -202,18 +214,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "FC" && $numberOfSeats != 0){
@@ -224,18 +236,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 25.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BA" && $numberOfSeats != 0){
@@ -246,18 +258,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 33.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BF" && $numberOfSeats != 0){
@@ -268,18 +280,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr></tr>";
 			  						}
 			  					}
 			  					if($seatType == "BC" && $numberOfSeats != 0){
@@ -290,18 +302,18 @@
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  						else{
 			  							$cost = 30.00;
 			  							$quantity = $numberOfSeats;
 			  							$subtotal = $cost * $quantity;
 			  							$total += $subtotal;
-			  							echo "<td>$".$cost."</td>";
+			  							echo "<td>$".number_format((float)$cost, 2, '.', '')."</td>";
 			  							echo "<td>".$quantity."</td>";
-			  							echo "<td>$".$subtotal."</td></tr>";
+			  							echo "<td>$".number_format((float)$subtotal, 2, '.', '')."</td></tr>";
 			  						}
 			  					}
 			  				}
@@ -309,10 +321,10 @@
 			  				echo "<tr><td>Total: </td>";
 			  				echo "<td></td>";
 			  				echo "<td></td>";
-			  				echo "<td>$".$total."</td></tr></table>";
+			  				echo "<td>$".number_format((float)$total, 2, '.', '')."</td></tr></table>";
 			  			}
 			  		}
-			  		echo "<table><tr><p>Grand Total: $".$grandTotal."</p></tr></table>";
+			  		echo "<table><tr><p>Grand Total: $".number_format((float)$grandTotal, 2, '.', '')."</p></tr></table>";
 			  	 ?>
 		</div>
 	</article>
