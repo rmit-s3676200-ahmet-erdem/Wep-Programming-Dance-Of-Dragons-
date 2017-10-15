@@ -1,5 +1,3 @@
-// codes were adapted from StackOverFlow and PHP Manual -->
-
 var movieTable = [["CH","MON-13","TUE-13","WED-18","THU-18","FRI-18","SAT-12","SUN-12"],
 ["AF","MON-18","TUE-18","SAT-15","SUN-15"],
 ["RC","MON-21","TUE-21","WED-13","THU-13","FRI-13","SAT-18","SUN-18"],

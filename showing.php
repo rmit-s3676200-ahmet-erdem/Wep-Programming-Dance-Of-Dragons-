@@ -1,4 +1,3 @@
-<!-- codes were adapted from StackOverFlow and PHP Manual -->
 <?php
   session_start();
    // include_path='C:\xampp\php\PEAR'
@@ -326,10 +325,28 @@
             $counterx = count($_SESSION['cart']);
           } ?>
           <!-- <a class="button button-primary" href="cart.php" >Checkout</a> -->
-          <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">Checkout</a></button>
+          <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">CLICK ME</a></button>
           <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counterx; ?>)" id="append">
         </fieldset>
         </form>
+        <?php echo isset($_SESSION['cart']);  // undefined
+          $converted_res = (isset($_SESSION['cart'])) ? 'true' : 'false';
+          echo "hi " . $converted_res;
+          // if(isset($_SESSION['cart'])){ // true
+          //        unset ($_SESSION['cart']); 
+          //     }
+          echo gettype($_SESSION['cart']);
+          echo count($_SESSION);
+          echo count($_SESSION['cart']);
+          //echo count($_SESSION['cart'][0]);
+          //echo count($_SESSION['cart'][0]);
+          if(isset($_SESSION['cart'])){
+            //foreach ($_SESSION['cart'] as &$value) {}
+            $counterx = count($_SESSION['cart']);
+          //$counter = count($_SESSION['cart']);
+          //$counter = count($_SESSION['cart']);
+          }
+        ?>
     </div>
   </article>
 </main>

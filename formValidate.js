@@ -1,4 +1,3 @@
-//codes were adapted from StackOverFlow and PHP Manual -->
   function getid(sP){
       return document.getElementById(sP);
     }
