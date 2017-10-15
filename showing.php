@@ -15,23 +15,27 @@
     <title>Now Showing</title>
     <?php require_once("top-module.php"); ?>
   </head>
-<body onload='showMovie(); checkOutControl();'>
+<body>
   <?php require_once("header-nav-module.php"); ?>
 <main>
 <article>
 <!-- carousel adapted from W3School Tutorial: https://www.w3schools.com/w3css/w3css_slideshow.asp -->
   <div id="showing" class="container">
-  	<div>
-      <img class="movie" src="https://image.ibb.co/mfF6nQ/despicableme3_16.jpg" alt="Despicable Me" border="0">
-      <img class="movie" src="https://image.ibb.co/iRhprk/atomic_blonde_charlize_theron_banner.jpg" alt="Atomic Blonde" border="0">
-      <img class="movie" src="https://image.ibb.co/jcQ3HQ/MADAME_1280x375_Date_1280x375_c.jpg" alt="Madame" border="0">
-      <img class="movie" src="https://image.ibb.co/jPsmnQ/18216607_1775033269476423_1145837994894948498_o.jpg" alt="The Big Sick" border="0">
+  	<div class="row">
+      <div class="twelve columns dimension timechart">
+        <img class="movie" src="https://image.ibb.co/mfF6nQ/despicableme3_16.jpg" alt="Despicable Me" border="0">
+      </div>
+      <div class="twelve columns dimension timechart">
+        <img class="movie" src="https://image.ibb.co/iRhprk/atomic_blonde_charlize_theron_banner.jpg" alt="Atomic Blonde" border="0">
+      </div>
+      <div class="twelve columns dimension timechart">
+        <img class="movie" src="https://image.ibb.co/jcQ3HQ/MADAME_1280x375_Date_1280x375_c.jpg" alt="Madame" border="0">
+      </div>
+      <div class="twelve columns dimension timechart">
+        <img class="movie" src="https://image.ibb.co/jPsmnQ/18216607_1775033269476423_1145837994894948498_o.jpg" alt="The Big Sick" border="0">
+      </div>        
     </div>
   </div>
-<div id="carousel">
-  <button class="button-primary" onclick='plusmovie(-1);'>Prev</button>
-  <button class="button-primary" onclick='plusmovie(+1);'>Next</button>
-</div>
   <div class="container">
     <div class="row">
       <div class="six columns dimension timechart">
@@ -317,10 +321,11 @@
           <h4 class="total">Total: <span class="price" id="pTotal">$ 0.00</span></h4>
           <?php if(isset($_SESSION['cart'])){
             //foreach ($_SESSION['cart'] as &$value) {}
+            //alert("TRUe");
             $counter = count($_SESSION['cart']);
           } ?>
           <!-- <a class="button button-primary" href="cart.php" >Checkout</a> -->
-          <input class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php"></a></input>
+          <button class="button-primary" type="button" name="checkout" value="checkout" id="book"><a href="cart.php">CLICK ME</a></button>
 
           <input class="button-primary" type="submit" name="append" value="Add to Cart(<?php echo $counter; ?>)" id="append">
         </fieldset>
@@ -332,7 +337,10 @@
           //        unset ($_SESSION['cart']); 
           //     }
           echo gettype($_SESSION['cart']);
+          echo count($_SESSION);
           echo count($_SESSION['cart']);
+          echo count($_SESSION['cart'][0]);
+          echo count($_SESSION['cart'][0]);
           if(isset($_SESSION['cart'])){
             //foreach ($_SESSION['cart'] as &$value) {}
             $counter = count($_SESSION['cart']);
@@ -347,5 +355,5 @@
 <?php include_once("/home/eh1/e54061/public_html/wp/debug.php"); ?>
   <script type="text/javascript" src="form.js"></script>
   </body>
-  <script type="text/javascript" src="showing.js"></script>
+  <!-- // <script type="text/javascript" src="showing.js"></script> -->
 </html>

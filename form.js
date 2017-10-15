@@ -425,18 +425,18 @@ function clickForAppend(){
     }
     return false;
 }
-function checkOutControl(){
-  //alert("CHEKCOUT");
-  var cartCounter = getId('append').value;
-  alert(cartCounter != "Add to Cart(0)");
-  //alert(checkOutAllowed.disabled);
-  if(cartCounter != "Add to Cart(0)"){
-    alert("working");
-    var checkOutAllowed = getId('book');
-    checkOutAllowed_required = checkOutAllowed.getAttributeNode("disabled");
-    checkOutAllowed.removeAttributeNode(checkOutAllowed_required);
-  }
-}
+// function checkOutControl(){
+//   //alert("CHEKCOUT");
+//   var cartCounter = getId('append').value;
+//   alert(cartCounter != "Add to Cart(0)");
+//   //alert(checkOutAllowed.disabled);
+//   if(cartCounter != "Add to Cart(0)"){
+//     alert("working");
+//     var checkOutAllowed = getId('book');
+//     checkOutAllowed_required = checkOutAllowed.getAttributeNode("disabled");
+//     checkOutAllowed.removeAttributeNode(checkOutAllowed_required);
+//   }
+// }
 // function clickForCheckout(){
 //   var cartCounter = getId('append').value;
 //   if(cartCounter != "Add to Cart(0)"){

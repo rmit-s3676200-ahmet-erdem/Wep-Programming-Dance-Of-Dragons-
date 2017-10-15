@@ -25,7 +25,6 @@
 </head>
 <body>
 	<?php require_once("header-nav-module.php"); ?>
-	<?php  echo ( $msg ); ?>
 <main>
 	<div class="-u-full-width u-pull-right u-pull-left" id="banner">
 	</div>
