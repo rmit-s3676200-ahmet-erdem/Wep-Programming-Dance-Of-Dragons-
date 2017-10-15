@@ -1,18 +1,5 @@
 <?php
   session_start();
-   // include_path='C:\xampp\php\PEAR'
-  //session_destroy();
-
-  // if (isset($_POST["append"])) {
-  //   $_SESSION['cart'][]=$_POST;
-  //   header('Location: cart.php');
-  // } 
-  // else if (isset($_POST["checkout"])){
-  //   $_SESSION['cart'][]=$_POST;
-    
-  // }
-  //unset ($_SESSION['cart']);
-  // session_unset();
 ?>
 <!DOCTYPE html>
 <html>
