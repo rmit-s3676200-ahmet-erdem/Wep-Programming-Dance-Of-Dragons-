@@ -14,7 +14,7 @@
     }
     
     function nameCheck(){
-       var nameRex=/^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*[^0-9±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,20}$/;
+       var nameRex=/^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,20}$/;
        var getName=getid('name').value;
       if(nameRex.test(getName)){
         return true;
