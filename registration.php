@@ -34,13 +34,14 @@
 
 			<label for="phno">Phone Number </label>
 			<input name="phNo" id="phNo" type="text" required>
-			<span class='error' id='phNoError'></span>
-			<input name="ticketSubmit" id="sub" type="submit">
+			<span class='error' id='phNoError'></span>  <br />
+			<a class="button button-primary" href="cart.php" >Back to Cart</a>
+			<input class="button button-primary" type="submit" name="ticketSubmit" id="sub">
 		  </form>		
 	   </div>
 	  </main>
 <?php require_once("footer-module.php"); ?>
 <?php include_once("/home/eh1/e54061/public_html/wp/debug.php"); ?>
-  <script type="text/javascript" src="formValidate.js?v=2"></script>
+  <script type="text/javascript" src="formValidate.js"></script>
   </body>
 </html>
