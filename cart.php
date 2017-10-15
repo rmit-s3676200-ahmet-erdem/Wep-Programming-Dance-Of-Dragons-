@@ -1,11 +1,23 @@
 <?php
   session_start();
+   // include_path='C:\xampp\php\PEAR'
+  //session_destroy();
+  $counter = 0;
   if(isset($_POST["delete"])){
-  	$_SESSION['counter'] += 1;
-  	$index = $_SESSION['counter'] - 1;
+  	$index = $counter - 1;
   	unset($_SESSION['cart'][$index]);
+  	// foreach ($_SESSION as $value1) {
+  	// 	foreach ($value1 as $key => $value) {
+  	// 		$findingIndex = $key;
+  	// 		if($findingIndex == $index){
+  	// 			unset($value);
+  	// 		}
+  	// 	}
+  	// }
+  	//unset($_SESSION['cart'][$index]);
   }
 ?>
+
 <html>
 <head>
 <title>Shopping Cart</title>
@@ -31,13 +43,12 @@
 	<article>
 		<div class="container">
 			  	<?php 
-			  	// $grandTotal = 0;
-			  	// echo "<form method='post'>";
-			  	// echo isset($_POST["delete"]);
-			  	// $converted_rest = (isset($_POST["delete"])) ? 'true' : 'false';
-			  	// echo $converted_rest;
-			  	// echo $_SESSION['counter'];
-      //     $sessionCartSize = count($_SESSION['cart']);
+			  	$grandTotal = 0;
+			  	echo "<form method='post'>";
+			  	echo isset($_POST["delete"]);
+			  	$converted_rest = (isset($_POST["delete"])) ? 'true' : 'false';
+			  	echo $converted_rest;
+			  	//$sessionCartSize = count($_SESSION['cart']);
 			  		foreach ($_SESSION as $value1) { //returns the array from [cart] => array()
 			  			//$grandTotal = 0;
 			  			foreach ($value1 as $value2) { // returns the array from [0] =? array()
@@ -48,18 +59,26 @@
 			  				if($movie == "CH"){
 			  					$counter++;
 			  					echo "<span class='movieCart'><b>Despicable Me (G),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+			  					//echo isset($_POST["delete"]);
+			  					echo $counter;
 			  				}
 			  				else if($movie == "AC"){
 			  					$counter++;
 			  					echo "<span class='movieCart'><b>Atomic Blonde (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+			  					//echo isset($_POST["delete"]);
+			  					echo $counter;
 			  				}
 			  				else if($movie == "RC"){
 			  					$counter++;
 			  					echo "<span class='movieCart'><b>The Big Sick (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+			  					//echo isset($_POST["delete"]);
+			  					echo $counter;
 			  				}
 			  				else if($movie == "AF"){
 			  					$counter++;
 			  					echo "<span class='movieCart'><b>Madame (M),</b></span><span class='deleteCart'><input class='button-primary' type='submit' name='delete' value='Delete from Cart'/></span>";
+			  					//echo isset($_POST["delete"]);
+			  					echo $counter;
 			  				}
 			  				if($day == "MON-13"){
 			  					echo "<p>Showing at Monday, 1pm</p>";
@@ -324,7 +343,6 @@
 			  			}
 			  		}
 			  		echo "<table><tr><p>Grand Total: $".number_format((float)$grandTotal, 2, '.', '')."</p></tr></table></form>";
-			  		echo "<button class='button-primary' type='button' name='checkout' value='checkout' id='book'><a href='registration.php'>CONFIRM</a></button>";
 			  	 ?>
 		</div>
 	</article>
